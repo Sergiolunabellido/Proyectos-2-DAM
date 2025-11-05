@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ListView?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.ejercicio21fxml.HelloController">
+<center>
+    <VBox  spacing="10.0"  >
+        <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        </padding>
+
+        <Label fx:id="ltarea" alignment="TOP_LEFT" prefWidth="120" text="Nueva tarea:" />
+
+        <HBox fx:id="hbox" alignment="BASELINE_LEFT" prefWidth="300" spacing="15.0">
+            <TextField fx:id="tfTarea" minWidth="230.0" />
+            <Button fx:id="añadir" minWidth="40" text="Añadir" onMousePressed="#añadir" />
+        </HBox>
+
+        <ListView fx:id="LVitems" editable="true" prefHeight="100.0" prefWidth="300.0" VBox.vgrow="ALWAYS"/>
+
+
+        <VBox alignment="CENTER">
+            <Button fx:id="Eliminar" text="Eliminar tarea seleccionada" onMousePressed="#Eliminar" />
+        </VBox>
+
+
+    </VBox>
+</center>
+
+</BorderPane>
+

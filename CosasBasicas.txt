@@ -1,0 +1,80 @@
+Estructura base de una app JavaFX
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
+import javafx.stage.Stage;
+
+public class MiApp extends Application {
+    @Override
+    public void start(Stage stage) {
+        // Layout principal
+        VBox root = new VBox(10);
+
+        // Escena
+        Scene scene = new Scene(root, 400, 300);
+
+        // Mostrar ventana
+        stage.setTitle("Mi Aplicación JavaFX");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+
+🔹 Controles básicos
+Componente	Ejemplo de inicialización
+Label (texto):	Label label = new Label("Hola Mundo");
+Button: Button btn = new Button("Clic aquí");
+TextField: TextField txt = new TextField();
+txt.setPromptText("Escribe algo...");
+PasswordField: PasswordField pwd = new PasswordField();
+TextArea: TextArea area = new TextArea();
+CheckBox: CheckBox chk = new CheckBox("Aceptar términos");
+RadioButton: RadioButton r1 = new RadioButton("Opción A");
+ToggleGroup: group = new ToggleGroup(); r1.setToggleGroup(group);
+ComboBox: ComboBox<String> combo = new ComboBox<>(); combo.getItems().addAll("Opción1", "Opción2");
+ChoiceBox	ChoiceBox<String> choice = new ChoiceBox<>(); choice.getItems().addAll("A", "B");
+ListView	ListView<String> list = new ListView<>(); list.getItems().addAll("Uno", "Dos");
+TableView	TableView<String> table = new TableView<>(); (necesita columnas definidas)
+Slider	Slider slider = new Slider(0, 100, 50);
+ProgressBar	ProgressBar pb = new ProgressBar(0.5);
+ProgressIndicator	ProgressIndicator pi = new ProgressIndicator();
+DatePicker	DatePicker date = new DatePicker();
+ColorPicker	ColorPicker cp = new ColorPicker();
+ImageView	Image img = new Image("ruta/imagen.png"); ImageView iv = new ImageView(img);
+MenuBar	MenuBar menuBar = new MenuBar(); Menu menu = new Menu("Archivo"); menu.getItems().add(new MenuItem("Salir")); menuBar.getMenus().add(menu);
+🔹 Layouts (para organizar componentes)
+Layout	Ejemplo
+VBox (vertical)	VBox vbox = new VBox(10); vbox.getChildren().addAll(label, btn);
+HBox (horizontal)	HBox hbox = new HBox(10); hbox.getChildren().addAll(txt, btn);
+BorderPane	BorderPane pane = new BorderPane(); pane.setTop(menuBar); pane.setCenter(content);
+GridPane	GridPane grid = new GridPane(); grid.add(label, 0, 0); grid.add(txt, 1, 0);
+StackPane	StackPane sp = new StackPane(); sp.getChildren().add(btn);
+AnchorPane	AnchorPane ap = new AnchorPane(); AnchorPane.setTopAnchor(btn, 10.0);
+FlowPane	FlowPane fp = new FlowPane(); fp.getChildren().addAll(btn, label, txt);
+TilePane	TilePane tp = new TilePane(); tp.getChildren().addAll(btn1, btn2);
+🔹 Eventos
+btn.setOnAction(e -> {
+    System.out.println("Botón clicado");
+});
+
+txt.setOnKeyReleased(e -> {
+    System.out.println("Texto: " + txt.getText());
+});
+
+🔹 Estilos (CSS en JavaFX)
+btn.setStyle("-fx-background-color: lightblue; -fx-font-size: 14px;");
+scene.getStylesheets().add("estilos.css");
+
+
+Ejemplo en estilos.css:
+
+.button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}

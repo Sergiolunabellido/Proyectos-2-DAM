@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="317.0" prefWidth="388.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+   <bottom>
+      <HBox prefHeight="41.0" prefWidth="388.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Label" textAlignment="JUSTIFY">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin></Label>
+            <Spinner layoutX="100.0">
+               <HBox.margin>
+                  <Insets left="200.0" />
+               </HBox.margin>
+            </Spinner>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
