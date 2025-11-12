@@ -17,19 +17,9 @@
     </padding>
 
     <HBox spacing="10">
-        <ComboBox fx:id="Colores" promptText="Colores" style="-fx-text-fill: black">
-            <items>
-                <FXCollections fx:factory="observableArrayList">
-                    <Label style="-fx-text-fill: black">Azul</Label>
-                    <Label style="-fx-text-fill: black">Rojo</Label>
-                    <Label style="-fx-text-fill: black">Azul</Label>
-                    <Label style="-fx-text-fill: black">Verde</Label>
-                </FXCollections>
-            </items>
-        </ComboBox>
+        <ComboBox fx:id="Colores" promptText="Colores" style="-fx-text-fill: black" onAction="#CambiarColor"/>
         <Button fx:id="Limpiar" text="Limpiar" onAction="#limpiar"/>
-
     </HBox>
 
-    <Canvas fx:id="Dibujo" layoutY="50" width="300" height="150" style="-fx-border-color: black; -fx-border-width: 2"/>
+    <Canvas fx:id="Dibujo" layoutY="50" width="300" height="150" />
 </AnchorPane>

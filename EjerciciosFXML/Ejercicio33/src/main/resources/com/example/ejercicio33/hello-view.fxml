@@ -5,12 +5,32 @@
 <?import javafx.scene.layout.VBox?>
 
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.control.Slider?>
+<VBox alignment="CENTER" spacing="15.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.ejercicio33.HelloController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+    <Rectangle fx:id="rectangulo" width="200" height="150"/>
+    <Label  fx:id="textoRGB"/>
+
+    <Label  text="Rojo"/>
+    <Slider fx:id="SliderRojo" min="0" max="255" value="50"
+            showTickLabels="true" showTickMarks="true"
+            majorTickUnit="25" minorTickCount="4"
+            snapToTicks="true" orientation="HORIZONTAL"/>
+
+    <Label  text="Verde"/>
+    <Slider fx:id="SliderVerde" min="0" max="255" value="50"
+            showTickLabels="true" showTickMarks="true"
+            majorTickUnit="25" minorTickCount="4"
+            snapToTicks="true" orientation="HORIZONTAL"/>
+
+    <Label  text="Azul"/>
+    <Slider fx:id="SliderAzul" min="0" max="255" value="50"
+            showTickLabels="true" showTickMarks="true"
+            majorTickUnit="25" minorTickCount="4"
+            snapToTicks="true" orientation="HORIZONTAL"/>
 </VBox>
